@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ShopKeeper.Models.Item>
+
+@{
+    ViewData["Title"] = "ViewItems";
+}
+
+<h2>ViewItems</h2>
+
+<p>
+    <a asp-action="AddItems">Add New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                  @Html.DisplayNameFor(model => model.ItemId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalItem)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PricePerItem)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerItem)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+﻿@model ShopKeeper.Models.DemoModel;
+
+@{
+    ViewData["Title"] = "DemoForm";
+}
+<br>
+<h2>DemoForm</h2>
+<form asp-action="DemoForm" asp-controller="Demo">
+    <label asp-for="FirstName"></label><br>
+    <input asp-for="FirstName" placeholder="FirstName.." /><br><br>
+    <label asp-for="LastName"></label><br>
+    <input asp-for="LastName" placeholder="LastName.." /></br>
+    <input type="submit" />
+    </form>
+

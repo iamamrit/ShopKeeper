@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ShopKeeper.Models.Item>
+@{
+    ViewData["Title"] = "SellItems";
+}
+
+
+    @*Show Specified Multiple Columns From Database*@
+    <div>
+        @*<h2>SellItems</h2>
+
+            <select asp-items="@(new SelectList(@ViewBag.NL))"></select>
+            <select asp-items="@(new SelectList(@ViewBag.PPI))"></select>
+
+
+            <table class="table">
+               <thead>
+                    <tr>
+                        <th>Name:
+                        </th>
+                        <th>Price Per Item:
+                        </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @foreach (var lis in ViewBag.NL)
+                            {
+                                @lis
+                                    }
+                            </td>
+                        <td>
+                            @foreach (var lis in ViewBag.PPI)
+                            {
+                                @lis
+                                               }
+                        </td>
+
+                        </tr>
+
+                </tbody>
+
+
+            </table>*@
+    </div>
+    <head>
+        <environment include="Development">
+           @* <link rel="stylesheet" type="text/css" href="~/css/Search.css">*@
+        </environment>
+    </head>
+
+   
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PricePerItem)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PricePerItem)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+

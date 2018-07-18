@@ -1,0 +1,44 @@
+﻿@model ShopKeeper.Models.Item
+
+@{
+    ViewData["Title"] = "AddItems";
+}
+
+<h2>Add Items To Store</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddItems">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label"></label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalItem" class="control-label"></label>
+                <input asp-for="TotalItem" class="form-control" />
+                <span asp-validation-for="TotalItem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricePerItem" class="control-label"></label>
+                <input asp-for="PricePerItem" class="form-control" />
+                <span asp-validation-for="PricePerItem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ViewItems">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

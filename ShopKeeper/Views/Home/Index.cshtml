@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1> Home || Index </h1>
+<head>
+    <environment include="Development">
+        <link rel="stylesheet" type="text/css" href="~/css/Index_Button.css">
+    </environment>
+</head>
+<a asp-controller="Item" , asp-action="AddItems"><button class="button">Add Items</button></a>
+<a asp-controller="Item" , asp-action="ViewItems"><button class="button">View Items</button></a>
+<br>
+<br>
+<a asp-controller="Item" , asp-action="SellItems"><button class="button">Sell Items</button></a>
+<a asp-controller="Demo" , asp-action="DemoForm"><button class="button">Demo Form</button></a><br><br>
